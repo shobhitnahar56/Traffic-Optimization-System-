@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Signal Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+</head>
+<body>
+    <h1>TRAFFIC OPTIMIZATION SYSTEM</h1>
+    <div id="signal-container"></div>
+
+    <!-- Disclaimer Marquee -->
+    <div class="marquee">
+        <marquee behavior="scroll" direction="left">
+            THIS IS THE REALTIME TRAFIC OPTIMIZATION SYSTEM.....STAY ALERT AND STAY SAFE! ALSO FOLLOW THE TRAFFIC RULES......CONTRIBUTION:- GUIDED BY Mr. FAKHRUDDIN AMJHERAWALA and Mrs. UMMUL BANIN AMJHERAWALA.....BUILT BY:-SHOBHIT NAHAR, ASHUTOSH TRIPATHI
+        </marquee>
+    </div>
+
+    <script>
+        async function fetchSignalData() {
+            const response = await fetch("/signal_data");
+            const data = await response.json();
+            const container = document.getElementById("signal-container");
+
+            container.innerHTML = "";
+            data.vehicle_counts.forEach((count, index) => {
+                const laneInfo = document.createElement("div");
+                laneInfo.className = "lane-info";
+                laneInfo.innerHTML = `
+                    <h2>LANE ${index + 1}</h2>
+                    <p>Vehicles Detected: ${count}</p>
+                    <p>Allocated Time: ${data.time_allocations[index]} seconds</p>
+                    `;
+                container.appendChild(laneInfo);
+            });
+        }
+
+        fetchSignalData();
+        setInterval(fetchSignalData, 10000); // Refresh every 10 seconds
+    </script>
+</body>
+</html>

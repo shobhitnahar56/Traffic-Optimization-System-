@@ -1,0 +1,6 @@
+{
+    "images": ["signal_data/lane1.jpg", "signal_data/lane2.jpg", "signal_data/lane3.jpg", "signal_data/lane4.jpg"],
+    "min_green": 10,
+    "max_green": 60
+}
+

@@ -1,0 +1,123 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #e8f0f2;
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2160px 1440px;
+    color: hsl(209, 13%, 35%);
+    line-height: 1.6;
+}
+
+/* Heading Styles */
+h1 {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    margin: 0 auto;
+    font-size: 35px;
+}
+
+/* Container for Signal Display */
+#signal-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+/* Lane Information Box */
+.lane-info {
+    background: #ffffff;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on Lane Info */
+.lane-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.lane-info h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #3498db;
+    font-weight: 500;
+}
+
+/* Paragraph Text Styling */
+.lane-info p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #7f8c8d;
+    font-weight: 400;
+}
+
+/* Adding Subtle Border to Paragraphs */
+.lane-info p:not(:last-child) {
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 8px;
+}
+
+/* Button Styling */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Button Focus Effect */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.8);
+}
+
+/* Smooth Transition for All Elements */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Marquee Styling */
+.marquee {
+    position: fixed;
+    bottom: 0; /* Stick to the bottom of the page */
+    left:0;
+    width: 100%; /* Full width of the page */
+    background-color: #3a4446; /* Light gray background */
+    padding: 18px 0; /* Vertical padding for spacing */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow above the bar */
+    font-size: 0.8rem; /* Standard font size */
+    color: #38414b; /* Dark gray text */
+    font-weight:400;
+}
+
+/* Marquee Text */
+.marquee {
+    font-family: Arial, sans-serif;
+    color: #ffffff; /* Red text for visibility */
+}
